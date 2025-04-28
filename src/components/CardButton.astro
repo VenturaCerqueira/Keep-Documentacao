@@ -1,0 +1,39 @@
+---
+const { label, link } = Astro.props;
+---
+
+<article class="card">
+  <a href={link} class="card-link">
+    <div class="card-content">
+      <h3>{label}</h3>
+    </div>
+  </a>
+</article>
+
+<style>
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+export function gerarItensSistema(sistemaSlug: string) {
+  return [
+    { label: '📚  Documentação', link: `sistemas/${sistemaSlug}/documentacao` },
+    { label: '📦  Deploy e Versionamento', link: `sistemas/${sistemaSlug}/deploy` },
+    { label: '👨🏻‍💻  Solicitações', link: `sistemas/${sistemaSlug}/estrutura` },
+    { label: '⚙️  Arquitetura de Sistemas', link: `sistemas/${sistemaSlug}/arquitetura` },
+    { label: '🛡️  Controle de Qualidade', link: `sistemas/${sistemaSlug}/Controle` },
+    { label: '🔧  Ferramentas e Ambientes', link: `sistemas/${sistemaSlug}/dashboard` },
+    { label: '🎲  Mapeamento (BDA)', link: `sistemas/${sistemaSlug}/bancodados` },
+    { label: '🔒  Segurança', link: `sistemas/${sistemaSlug}/seguranca` },
+    { label: '📋  Procedimentos de Suporte', link: `sistemas/${sistemaSlug}/suporte` },
+    { label: '🔄  Atualizações', link: `sistemas/${sistemaSlug}/atualizacoes` },
+    { label: '✔️  Validação', link: `sistemas/${sistemaSlug}/validacao` },
+    { label: '📅  Versões', link: `sistemas/${sistemaSlug}/versoes` },
+    { label: '🌐  Web Service', link: `sistemas/${sistemaSlug}/web-service` }
+  ];
+}
+---
