@@ -13,158 +13,86 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Desenvolvimento',
+          label: ' Desenvolvimento',
           items: [
             { label: 'Implantação', link: 'desenvolvimento/' }
           ],
         },
         {
-          label: 'Suporte',
+          label: '☑️ Suporte',
           items: [
-            { label: 'Página Inicial', link: 'suporte/' }, 
-            
+            { label: '🏠  Página Inicial', link: 'suporte/' }, 
           ],
         },
         {
-          label: 'Sistemas',
+          label: '☑️ Sistemas',
           items: [
-            { label: 'Página Inicial', link: 'sistemas/' },
-              {
-                label: 'Folha de Pagamento',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
-              {
-                label: 'Tributos',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
-              {
-                label: 'e-Social',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
-              {
-                label: 'Patrimônio',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
-              {
-                label: 'Frotas',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
-              {
-                label: 'Compras Web',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
-              {
-                label: 'Portal do Servidor',
-                items: [
-                  { label: 'Documentação', link: 'sistemas/folha-pagamento/documentacao' },
-                  { label: 'Acesso', link: 'sistemas/folha-pagamento/acesso' },
-                  { label: 'Configuração', link: 'sistemas/folha-pagamento/configuracao' },
-                  { label: 'Manutenção', link: 'sistemas/folha-pagamento/manutencao' },
-                  { label: 'Relatórios', link: 'sistemas/folha-pagamento/relatorios' },
-                  { label: 'Rotinas', link: 'sistemas/folha-pagamento/rotinas' },
-                  { label: 'Segurança', link: 'sistemas/folha-pagamento/seguranca' },
-                  { label: 'Suporte', link: 'sistemas/folha-pagamento/suporte' },
-                  { label: 'Treinamento', link: 'sistemas/folha-pagamento/treinamento' },
-                  { label: 'Atualizações', link: 'sistemas/folha-pagamento/atualizacoes' },
-                  { label: 'Validação', link: 'sistemas/folha-pagamento/validacao' },
-                  { label: 'Versões', link: 'sistemas/folha-pagamento/versoes' },
-                  { label: 'Vídeos', link: 'sistemas/folha-pagamento/videos' },
-                  { label: 'Web Service', link: 'sistemas/folha-pagamento/web-service' }
-                ],
-              },
+            { label: '🏠  Página Inicial', link: 'sistemas/' },
+            {
+              label: '📊  Folha de Pagamento',
+              collapsed: true,
+              items: gerarItensSistema('folha-pagamento')
+            },
+            {
+              label: '🛅  Portal do Servidor',
+              collapsed: true,
+              items: gerarItensSistema('portal-servidor')
+            },
+            {
+              label: '✅  e-Social',
+              collapsed: true,
+              items: gerarItensSistema('esocial')
+            },
+            {
+              label: '⚖️  Tributos',
+              collapsed: true,
+              items: gerarItensSistema('tributos')
+            },
+            {
+              label: '🛒  Compras Web',
+              collapsed: true,
+              items: gerarItensSistema('compras-web')
+            },
+            {
+              label: '🏦  Patrimônio',
+              collapsed: true,
+              items: gerarItensSistema('patrimonio')
+            },
+            {
+              label: '📦  Almoxarifado',
+              collapsed: true,
+              items: gerarItensSistema('almoxarifado')
+            },
+            {
+              label: '🚗  Frotas',
+               collapsed: true,
+              items: gerarItensSistema('frotas')
+            }
           ],
         },
       ],
     }),
   ],
 });
+
+/**
+ * @param {string} sistemaSlug 
+ * @returns {Array<{label: string, link: string}>}
+ */
+function gerarItensSistema(sistemaSlug) {
+  return [
+    { label: '📚  Documentação', link: `sistemas/${sistemaSlug}/documentacao` },
+    { label: '📦  Deploy e Versionamento', link: `sistemas/${sistemaSlug}/deploy` },
+    { label: '👨🏻‍💻  Solicitações', link: `sistemas/${sistemaSlug}/estrutura` },
+    { label: '⚙️  Arquitetura de Sistemas', link: `sistemas/${sistemaSlug}/arquitetura` },
+    { label: '🛡️  Controle de Qualidade', link: `sistemas/${sistemaSlug}/Controle` },
+    { label: '🔧  Ferramentas e Ambientes', link: `sistemas/${sistemaSlug}/dashboard` },
+    { label: '🎲  Mapeamento (BDA)', link: `sistemas/${sistemaSlug}/bancodados` },
+    { label: '🔒  Segurança', link: `sistemas/${sistemaSlug}/seguranca` },
+    { label: '📋  Procedimentos de Suporte', link: `sistemas/${sistemaSlug}/suporte` },
+    { label: '🔄  Atualizações', link: `sistemas/${sistemaSlug}/atualizacoes` },
+    { label: '✔️  Validação', link: `sistemas/${sistemaSlug}/validacao` },
+    { label: '📅  Versões', link: `sistemas/${sistemaSlug}/versoes` },
+    { label: '🌐  Web Service', link: `sistemas/${sistemaSlug}/web-service` }
+  ];
+}
