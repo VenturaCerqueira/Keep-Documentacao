@@ -86,14 +86,12 @@ function gerarItensSistema(sistemaSlug) {
         label: '📚 Documentação',
         collapsed: true,
         items: [
-          { label: '📄 Documentação Geral', link: `sistemas/${sistemaSlug}/documentacao` },
+          { label: '📄 Documentação', link: `sistemas/${sistemaSlug}/documentacao` },
           {
             label: '🗃️ Cadastro',
             collapsed: true,
             items: [
-              { label: '01 - Cadastro Básico', link: `sistemas/${sistemaSlug}/cadastro/01` },
-              { label: '02 - Cadastro Avançado', link: `sistemas/${sistemaSlug}/cadastro/02` },
-              { label: '03 - Cadastro Extra', link: `sistemas/${sistemaSlug}/cadastro/03` },
+              { label: '01 - Índice financeiro', link: `sistemas/${sistemaSlug}/doc_org/cadastro/01-indice_financeiro` }
             ]
           },
           { label: '🏘️ Imobiliário', link: `sistemas/${sistemaSlug}/imobiliario` }
