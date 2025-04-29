@@ -14,22 +14,10 @@ hero:
       link: /suporte/
       icon: right-arrow
 ---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-# Keep Informática
-
-<CardGrid stagger>
-  <Card title="Documentação" icon="document">
-
-  </Card>
-  <Card title="Manual" icon="add-document">
-
-  </Card>
-  <Card title="Sistemas" icon="setting">
-
-  </Card>
-  <Card title="Solicitações" icon="open-book">
-
-  </Card>
+<CardGrid>
+  <LinkCard title="Authoring Markdown" href="/guides/authoring-content/" />
+  <LinkCard title="Components" href="/components/using-components/" />
 </CardGrid>
