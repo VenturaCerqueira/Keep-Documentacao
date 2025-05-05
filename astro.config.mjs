@@ -92,7 +92,7 @@ function gerarItensSistema(sistemaSlug) {
             label: '🗃️ Cadastro',
             collapsed: true,
             items: [
-              { label: '📊 01 - Índice financeiro', link: `sistemas/${sistemaSlug}/doc_org/cadastro/01-indice_financeiro` },
+              { label: '📊 01 - Índice financeiro', link: `sistemas/${sistemaSlug}/doc_org/cadastro/01-indice_financeiro.mdx` },
               { label: '💰 02 - Multa', link: `sistemas/${sistemaSlug}/doc_org/cadastro/02-multa` },
               { label: '📈 03 - Juros', link: `sistemas/${sistemaSlug}/doc_org/cadastro/03-juros` },
               { label: '📒 04 - Conta contábil', link: `sistemas/${sistemaSlug}/doc_org/cadastro/04-conta_contabil` },

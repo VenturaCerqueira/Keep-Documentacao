@@ -1,0 +1,120 @@
+---
+title: 📊 Índice Financeiro
+description: Página de documentação sobre o Índice Financeiro no sistema e-Contrib.
+---
+
+import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Descrição Funcional">
+
+Lista de Índice Financeiro 
+
+```js
+Utilizada para corrigir valores monetários ou ajustar tributos ao longo do tempo, 
+considerando a inflação ou outras variações econômicas.  
+Exemplo: IPC, IGPM e outros.
+```
+</Aside>
+## 🔁 Rotas / Endpoints Relacionados:
+<br/>
+<Tabs>
+  <TabItem label="Lista de Índices Financeiro" icon="setting">
+   ```sh title=" ✅- Lista de Índices Financeiro"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/indices-financeiro
+   ```
+  </TabItem>
+  <TabItem label="Cadastrar Novo" icon="add-document">
+   ```sh title="✅- Cadastrar Novo Índice Financeiro"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/indices-financeiro/criar
+   ```
+  </TabItem>
+  <TabItem label="Índices Financeiro Editar" icon="pencil">
+   ```sh title="✅- Índices Financeiro Editar"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/indices-financeiro/editar/**Índice_selecionado**
+   ```
+  </TabItem>
+</Tabs>
+
+## 🧩 Estrutura Funcional dos Dados
+
+<Card title="Tabelas sobre Indice Financeiro: " type="tip" icon="seti:db">
+| **#** | **✏️ Nome Físico**              |                                                |
+|-------|------------------------------|----------------------------------------------- |
+| 01    | indice_financeiro            |                                                |
+| 02    | indice_financeiro_correcao   | <Badge text="Tabela Relacional" size="small" />| 
+</Card>
+---
+### 🔗 Relacionamentos com Outras Tabelas
+<Card title="Tabelas Relacionadas - indice_financeiros:" type="tip" icon="seti:db">
+| **#** | **✏️Nome Físico**              | **🔁 Relação**  |
+|-------|------------------------------|--------------|
+| 01    | indice_financeiro_correcao <Badge text="Tabela Relacional" size="small" variant="note" />   | 1 - N        |
+| 02    | receita_tipo  <Badge text="Tabela Relacional" size="small" variant="tip" />                | 1 - N        |
+</Card>
+---
+<Card title="Tabelas Dependentes - indice_financeiro_correcao:" type="tip" icon="seti:db">
+| **#** | **✏️Nome Físico**             | **🔁 Relação** |
+|-------|------------------------------|-------------|
+| 01    | indice_financeiro  <Badge text="Tabela dependente" size="small" variant="caution" />           | 1 - N       |
+</Card>
+---
+### 📊 Campos da Tabela:
+ -  `indice_financeiro`  
+ - `indice_financeiro_correcao`
+
+<Card title="Campos de indice_financeiro:" type="tip" icon="seti:db">
+| **#** | **Nome**                     | **Tabela Raiz** | **Tipo/Tamanho**        | **Descrição**                                | **Campo Sistema** |
+|-------|------------------------------|-----------------|-------------------------|----------------------------------------------|-------------------|
+| 01    | id                           |  <Badge text="🗝️PK" size="small" variant="success" />               | bigint UN AI          |                                              |                   |
+| 02    | nome                         |                 | varchar(100)            | Nome do índice monetário.                    | Nome              |
+</Card>
+---
+<Card title="Campos de indice_financeiro_correcao" type="tip" icon="seti:db">
+| **#** | **Nome**                     | **Tabela Raiz**            | **Tipo/Tamanho**        | **Descrição**                                | **Campo Sistema** |
+|-------|------------------------------|--------------------------  |-------------------------|----------------------------------------------|-------------------|
+| 01    | id                           |                            | bigint UN AI PK         |                                              |                   |
+| 02    | fk_indice                    | indice_financeiro_correcao | bigint UN               | Código *"id"* da tabela de indice_financeiro |                   |
+| 03    | competencia                  |                            | date                    | Data de competência do ajuste da inflação.   | Ano               |
+| 04    | percentual                   |                            | decimal(15,2)           | Cadastro do indicador da inflação.           | IPCA ACUMULADO %  |
+</Card>
+
+## ⚠️ Regras de Negócio Específicas
+      <Steps>
+
+      1. Atualmente encontra-se disponivel **7** cadastros de índices financeiros, sendo eles:
+          1. `IGPM (FGV)`,
+          2. `IPC (IBGE)`,
+          3. `IPCA-E (IBGE)`,
+          4. `IPC-BRASIL (FGV)`,
+          5. `INPC`,
+          6. `IGP-DI`,
+          7. `SELIC`.
+
+         ```SQL title= "Exemplo de inserção de dados na tabela indice_financeiro_correcao"
+         INSERT INTO indice_financeiro_correcao (fk_indice, competencia, percentual, created_at)
+          VALUES (6, '2025-03-01', -0.50, '2025-05-05 14:34:57');
+         ```
+      </Steps>
+
+
+## 🖱️ Funcionalidades na Interface:
+   <Steps>
+      1. **🔍 Pesquisar**: Acesso a listagem de índices financeiros cadastrados no sistema.
+         
+      2. **👁️‍🗨️ Ações/visualizar**: Acesso ao formulário para cadastro de novos índices financeiros.
+            ```sh title=" 👁️‍🗨️Ação/visualizar"
+            http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/indices-financeiro/visualizar/id_indice
+            ```
+
+   </Steps>
+
+
+## 📌 Observações Técnicas
+
+## 🧪 Ações / Botões no Sistema
+
+| **#** | **Nome**                     | **Função** |
+|-------|------------------------------|------------|
+| 01    | visualizar                   |            |
+
+

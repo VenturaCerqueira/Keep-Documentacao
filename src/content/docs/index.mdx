@@ -5,132 +5,97 @@ template: splash
 hero:
   tagline: Nosso portal de documentação dos sistemas.
   image:
-    # Garanta que o caminho para o logo está correto
     file: ../../assets/logo.png
   actions:
     - text: Documentação Geral
-      link: /documentacao/geral/ # Sugestão: link para uma visão geral
+      link: /documentacao/geral/
       icon: open-book
-      variant: primary # Adiciona destaque ao botão principal
+      variant: primary 
     - text: Guias de Desenvolvimento
-      link: /desenvolvimento/ # Ou um link mais específico
+      link: /desenvolvimento/ 
       icon: rocket
-      variant: secondary # Estilo secundário para o segundo botão
+      variant: secondary 
 ---
 import { LinkCard, CardGrid, Card, LinkButton, Icon, Aside } from '@astrojs/starlight/components';
 
-# Bem-vindo à documentação da Keep Informática
-
-{/* Adiciona margem inferior ao parágrafo introdutório */}
+# 🚀 Documentação da Keep Informática
 <p style="margin-bottom: 1.5rem;">
   A Keep Informática é uma empresa de tecnologia que desenvolve soluções inovadoras para o mercado.
   Nossa documentação abrange uma variedade de tópicos, desde a instalação e configuração de nossos produtos até guias avançados para desenvolvedores.
 </p>
-
-{/* Adiciona margem inferior e peso maior ao título da seção de sistemas */}
 <h3 style="margin-bottom: 1.5rem; font-weight: 600;">Nossos Sistemas:</h3>
-
 <CardGrid>
   {/* --- Card 1: Keep Folha --- */}
-  {/* Adiciona sombra sutil e transição para efeitos de hover (o Starlight pode aplicar o transform) */}
   <Card title="Keep Folha" icon="id-card" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
-    <p style="margin-bottom: 1rem;"> {/* Usar <p> e margem */}
+    <p style="margin-bottom: 1rem;"> 
       Gestão completa de Folha de Pagamento e Recursos Humanos.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
-    {/* Adiciona transição ao botão para suavizar hover (efeitos padrão do Starlight) */}
     <LinkButton href="/sistemas/keep-folha/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 2: e-Contrib --- */}
   <Card title="e-Contrib" icon="tax" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Sistema para Gestão de Contribuições e Impostos Municipais/Federais.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/e-contrib/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 3: Portal do Servidor --- */}
    <Card title="Portal do Servidor" icon="user-check" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Plataforma online para acesso a informações e serviços pelo servidor público.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/portal-servidor/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 4: e-Social --- */}
    <Card title="e-Social Módulo de Envio" icon="upload-cloud" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Módulo integrado para envio de eventos ao e-Social.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/e-social/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 5: Compras Online --- */}
    <Card title="Compras Online" icon="shopping-cart" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Sistema para gerenciamento do processo de compras e licitações.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/compras/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 6: Patrimônio --- */}
   <Card title="Patrimônio" icon="building-library" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Gestão e controle de bens patrimoniais.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/patrimonio/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 7: Almoxarifado --- */}
    <Card title="Almoxarifado" icon="archive" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Controle de estoque, entradas e saídas de materiais.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/almoxarifado/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 8: Frotas --- */}
   <Card title="Frotas" icon="steering-wheel" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Gerenciamento de veículos, manutenções e abastecimentos.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/frotas/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
-
   {/* --- Card 9: NFS-e --- */}
   <Card title="NFS-e" icon="receipt-tax" style={{ boxShadow: '0 2px 5px rgba(0,0,0,0.08)', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}>
     <p style="margin-bottom: 1rem;">
-      {/* !!! IMPORTANTE: Atualize esta descrição !!! */}
       Emissão e gerenciamento de Nota Fiscal de Serviço Eletrônica.
     </p>
-    {/* !!! IMPORTANTE: Atualize este link !!! */}
     <LinkButton href="/sistemas/nfs-e/introducao/" icon="open-book" style={{ transition: 'background-color 0.2s ease, transform 0.2s ease' }}>Documentação</LinkButton>
   </Card>
 </CardGrid>
 
-{/* --- Footer Melhorado --- */}
 <footer
   style={{
-    marginTop: '5rem', // Aumenta ainda mais a margem superior
-    padding: '3rem 1.5rem', // Aumenta padding
-    // Background removido conforme sua preferência
+    marginTop: '5rem', 
+    padding: '3rem 1.5rem', 
     color: 'var(--sl-color-text-accent)',
-    borderTop: '1px solid var(--sl-color-border)', // Mantém a borda
+    borderTop: '1px solid var(--sl-color-border)', 
     fontSize: '0.9rem',
   }}
 >
@@ -144,26 +109,20 @@ import { LinkCard, CardGrid, Card, LinkButton, Icon, Aside } from '@astrojs/star
       margin: '0 auto',
     }}
   >
-    {/* Coluna 1: Descrição */}
     <div style="margin-bottom: 1rem;">
       <h3 style="margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--sl-color-heading);">Portal Dev - Keep Informática</h3>
       <p style="line-height: 1.6; color: var(--sl-color-text);">
         Soluções inovadoras para gestão e tecnologia. Oferecemos sistemas para folha de pagamento, patrimônio, e muito mais.
       </p>
     </div>
-
-    {/* Coluna 2: Páginas */}
     <div style="margin-bottom: 1rem;">
       <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: var(--sl-color-heading);">Navegação</h4>
       <ul style="list-style: none; padding: 0; line-height: 1.9;">
-         {/* Links do Footer com transição */}
         <li><a href="/" style="color: var(--sl-color-link); text-decoration: none; transition: color 0.2s ease;">Home</a></li>
         <li><a href="/sobre" style="color: var(--sl-color-link); text-decoration: none; transition: color 0.2s ease;">Sobre Nós</a></li>
         <li><a href="/contato" style="color: var(--sl-color-link); text-decoration: none; transition: color 0.2s ease;">Contato</a></li>
       </ul>
     </div>
-
-    {/* Coluna 3: Recursos */}
     <div style="margin-bottom: 1rem;">
       <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: var(--sl-color-heading);">Recursos Úteis</h4>
       <ul style="list-style: none; padding: 0; line-height: 1.9;">
@@ -173,11 +132,9 @@ import { LinkCard, CardGrid, Card, LinkButton, Icon, Aside } from '@astrojs/star
       </ul>
     </div>
   </div>
-
-  {/* Seção de Copyright e Social */}
   <div
     style={{
-      marginTop: '4 rem', // Aumenta um pouco mais a separação
+      marginTop: '4 rem',
       textAlign: 'center',
       fontSize: '0.85rem',
       color: 'var(--sl-color-text-muted)',
@@ -185,13 +142,11 @@ import { LinkCard, CardGrid, Card, LinkButton, Icon, Aside } from '@astrojs/star
   >
     <p>© {new Date().getFullYear()} Keep Informática. Todos os direitos reservados.</p>
     <div style="display: flex; justify-content: center; gap: 1.2rem; margin-top: 1rem;">
-       {/* Links Sociais com transição para hover (cor e talvez transform) */}
-       {/* Adicionado display: 'inline-block' para garantir que transform funcione */}
       <a href="https://github.com/VenturaCerqueira" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="display: inline-block; color: var(--sl-color-text-accent); transition: color 0.2s ease, transform 0.2s ease;">
-        <Icon name="github" size="1.3rem" /> {/* Ícone ligeiramente maior */}
+        <Icon name="github" size="1.3rem" /> 
       </a>
       <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Discord" style="display: inline-block; color: var(--sl-color-text-accent); transition: color 0.2s ease, transform 0.2s ease;">
-        <Icon name="discord" size="1.3rem" /> {/* Ícone ligeiramente maior */}
+        <Icon name="discord" size="1.3rem" /> 
       </a>
     </div>
   </div>

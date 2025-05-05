@@ -5,6 +5,11 @@ description: Página de documentação sobre o Índice Financeiro no sistema e-C
 
 # 📊 e-contrib - Modelo e-2025
 
+
+
+
+
+
 ## 📋 Lista de Índice Financeiro  
 Utilizada para corrigir valores monetários ou ajustar tributos ao longo do tempo, considerando a inflação ou outras variações econômicas.  
 **Exemplo:** IPC, IGPM e outros.
