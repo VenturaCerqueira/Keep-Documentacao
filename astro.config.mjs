@@ -6,7 +6,8 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'Documentos - Keep',
+      title: 'Dev - Portal Keep',
+      description: 'Documentação do Portal Keep',
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/VenturaCerqueira' },
         { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/ventura-cerqueira/' }
