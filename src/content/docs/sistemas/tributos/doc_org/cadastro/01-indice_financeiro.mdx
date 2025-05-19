@@ -1,36 +1,37 @@
 ---
-title: 📊 Índice Financeiro
-description: Página de documentação sobre o Índice Financeiro no sistema e-Contrib.
+title: 📊 Cadastro - Índice Financeiro
+description: Lista de Índices financeiro.
 ---
 
 import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
 
-<Aside type="tip" title="Descrição Funcional">
+<Aside type="tip" title="Lista de Índice Financeiro ">
 
-Lista de Índice Financeiro 
-
-```js
-Utilizada para corrigir valores monetários ou ajustar tributos ao longo do tempo, 
-considerando a inflação ou outras variações econômicas.  
+```
+Utilizada para corrigir valores monetários ou ajustar tributos 
+ao longo do tempo, considerando a inflação ou outras variações econômicas.  
 Exemplo: IPC, IGPM e outros.
 ```
 </Aside>
 ## 🔁 Rotas / Endpoints Relacionados:
 <br/>
 <Tabs>
-  <TabItem label="Lista de Índices Financeiro" icon="setting">
+  <TabItem label="Lista de Índices" icon="setting">
    ```sh title=" ✅- Lista de Índices Financeiro"
-   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/indices-financeiro
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/
+   cadastros/indices-financeiro
    ```
   </TabItem>
   <TabItem label="Cadastrar Novo" icon="add-document">
    ```sh title="✅- Cadastrar Novo Índice Financeiro"
-   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/indices-financeiro/criar
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/
+   cadastros/indices-financeiro/criar
    ```
   </TabItem>
   <TabItem label="Índices Financeiro Editar" icon="pencil">
    ```sh title="✅- Índices Financeiro Editar"
-   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/indices-financeiro/editar/**Índice_selecionado**
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/
+   indices-financeiro/editar/**Índice_selecionado**
    ```
   </TabItem>
 </Tabs>
@@ -91,7 +92,8 @@ Exemplo: IPC, IGPM e outros.
           7. `SELIC`.
 
          ```SQL title= "Exemplo de inserção de dados na tabela indice_financeiro_correcao"
-         INSERT INTO indice_financeiro_correcao (fk_indice, competencia, percentual, created_at)
+         INSERT INTO indice_financeiro_correcao 
+         (fk_indice, competencia, percentual, created_at)
           VALUES (6, '2025-03-01', -0.50, '2025-05-05 14:34:57');
          ```
       </Steps>
@@ -103,7 +105,8 @@ Exemplo: IPC, IGPM e outros.
          
       2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de novos índices financeiros.
             ```sh title=" 👁️‍🗨️Ação/visualizar"
-            http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/indices-financeiro/visualizar/id_indice
+            http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/
+            indices-financeiro/visualizar/id_indice
             ```
 
    </Steps>
