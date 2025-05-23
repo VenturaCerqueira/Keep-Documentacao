@@ -1,0 +1,102 @@
+---
+title: Multa 📄
+description: Página de documentação sobre Multas no sistema e-Contrib.
+---
+import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
+
+## 🗂️ Descrição:
+
+<Aside type="tip" title="Cadastro de Multas">
+    ```
+    Cadastro de multas aplicadas para cálculo no DAM, com configuração
+    de 📅prazo inicial, 📅prazo final e percentual aplicado.
+    ```
+</Aside>
+---
+## 🔁 Rotas / Endpoints Relacionados:
+<br/>
+<Tabs>
+  <TabItem label="Lista de Multas" icon="setting">
+   ```sh title=" ✅- Lista de Multas"
+   http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/multas
+   ```
+  </TabItem>
+  <TabItem label="Cadastrar Novo" icon="add-document">
+   ```sh title="✅- Cadastrar Nova Multas"
+   http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/multas/editar/id
+   ```
+  </TabItem>
+  <TabItem label="Multas Editar" icon="pencil">
+   ```sh title="✅- Multas Editar"
+   http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/multas/criar
+   ```
+  </TabItem>
+</Tabs>
+
+## 🧩 Estrutura Funcional dos Dados
+
+<Card title="Tabelas sobre Multa: " type="tip" icon="seti:db">
+
+| #  | ✏️ Nome Físico     |
+|-----|-----------------|
+| 01  | `multa`         |
+| 02  | `multa_prazo` <Badge text="Tabela Relacional" size="small" /> |
+
+</Card>
+---
+### 🔗 Relacionamentos com Outras Tabelas
+
+<Card title="Tabelas relacionadas com Multa: " type="tip" icon="seti:db">
+| Nº  | Nome Físico                                                                                                 | Relação |
+|-----|-------------------------------------------------------------------------------------------------------------|---------|
+| 01  | [`receita_tipo`](../../doc_org/cadastro/07-receita_tipo) | 1 → N   |
+</Card>
+
+---
+
+### 📊 Campos da Tabela:
+
+-  `multa`  
+ - `multa_prazo`
+
+<Card title="Campos de multa:" type="tip" icon="seti:db">
+
+| #  | Nome          | Tipo/Tamanho        | Descrição                                                 | Campo no Sistema  |
+|-----|---------------|---------------------|------------------------------------------------------------|-------------------|
+| 01  | `id`<Badge text="🗝️PK" size="small" variant="success" />          | bigint UN AI PK     | Identificador único.                                       | -                 |
+| 02  | `descricao`   | varchar(30)         | Texto sobre a natureza da multa.                           | Descrição         |
+| 03  | `competencia` | date                | Período fiscal ao qual a multa se refere.                  | Competência       |
+</Card>
+---
+<Card title="Campos de multa_prazo" type="tip" icon="seti:db">
+
+| #  | Nome            | Tipo/Tamanho      | Tabela Raiz | Descrição                                                                 | Campo no Sistema |
+|-----|-----------------|-------------------|-------------|---------------------------------------------------------------------------|------------------|
+| 01  | `id` <Badge text="🗝️PK" size="small" variant="success" />            | bigint UN AI PK   | -           | Identificador único.                                                     | -                |
+| 02  | `fk_multa`      | bigint(20)        | multa       | Chave estrangeira da tabela `multa`.                                     | -                |
+| 03  | `prazo_inicial` | int(11)           | -           | Dias de início para cálculo da multa.                                    | Prazo inicial    |
+| 04  | `prazo_final`   | int(11)           | -           | Dias de término para aplicação da multa.                                 | Prazo final      |
+| 05  | `percentual`    | decimal(15,2)     | -           | Percentual aplicado entre os prazos inicial e final.                     | Percentual       |
+</Card>
+---
+
+## 🧪 Ações / Botões no Sistema:
+    <Steps>
+        1. **🔍 Pesquisar**: Filtro para pesquisa de todos as multas, pesquisando por "descrição".
+            
+        2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de visualizar cadastro da multa selecionada.
+                ```sh title=" 👁️‍🗨️Ação/visualizar"
+                http://www.e-contrib.com.br/gestaotributaria/
+                entidade/cadastros/multas/visualizar/1
+                ```
+        3. **✏️ Editar**: Possibilitando edição dos campos do cadastro de multas
+            ```sh title=" 👁️‍🗨️Ação/visualizar"
+                http://www.e-contrib.com.br/gestaotributaria/
+                entidade/cadastros/multas/criar
+            ```
+        4. **🗑 Excluir:** Possibilitando excluir multas cadastradas 
+        (⚠ Observação: apenas sera possivel excluir caso não possua nenhuma amarração com a multa)
+        
+   </Steps>
+
+

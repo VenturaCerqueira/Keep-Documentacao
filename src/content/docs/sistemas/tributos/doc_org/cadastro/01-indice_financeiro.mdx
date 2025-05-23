@@ -5,11 +5,16 @@ description: Lista de Índices financeiro.
 
 import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
 
-<Aside type="tip" title="Lista de Índice Financeiro ">
+## 🗂️ Descrição:
 
+<Aside type="tip" title="Lista de Índice Financeiro ">
 ```
-Utilizada para corrigir valores monetários ou ajustar tributos 
-ao longo do tempo, considerando a inflação ou outras variações econômicas.  
+Utilizada para corrigir valores monetários ou ajustar tributos
+ao longo do tempo, levando em conta inflação ou outras variações econômicas.
+Atualmente, essa funcionalidade é obtida automaticamente
+por meio de uma API de consulta, não sendo possível o cadastro ou alteração 
+manual por parte do usuário do sistema.
+ 
 Exemplo: IPC, IGPM e outros.
 ```
 </Aside>
@@ -82,7 +87,7 @@ Exemplo: IPC, IGPM e outros.
 ## ⚠️ Regras de Negócio Específicas
       <Steps>
 
-      1. Atualmente encontra-se disponivel **7** cadastros de índices financeiros, sendo eles:
+      1. Atualmente encontra-se disponivel **7** cadastros de índices financeiros com dados de sua criação até data atual, não sendo possivel criação de um novo índice financeiro via sistema:
           1. `IGPM (FGV)`,
           2. `IPC (IBGE)`,
           3. `IPCA-E (IBGE)`,
@@ -91,7 +96,7 @@ Exemplo: IPC, IGPM e outros.
           6. `IGP-DI`,
           7. `SELIC`.
 
-         ```SQL title= "Exemplo de inserção de dados na tabela indice_financeiro_correcao"
+         ```SQL title="Exemplo de inserção de dados na tabela indice_financeiro_correcao"
          INSERT INTO indice_financeiro_correcao 
          (fk_indice, competencia, percentual, created_at)
           VALUES (6, '2025-03-01', -0.50, '2025-05-05 14:34:57');
@@ -99,8 +104,8 @@ Exemplo: IPC, IGPM e outros.
       </Steps>
 
 
-## 🖱️ Funcionalidades na Interface:
-   <Steps>
+## 🧪 Ações / Botões no Sistema
+<Steps>
       1. **🔍 Pesquisar**: Filtro para pesquisa de todos os índices financeiros, pesquisando por "Nome".
          
       2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de novos índices financeiros.
@@ -110,23 +115,5 @@ Exemplo: IPC, IGPM e outros.
             ```
 
    </Steps>
-
-
-## 📌 Observações Técnicas
-```json
-[
-  "fk_indice",
-  "competencia",
-  "percentual",
-  "created_at"
-]
-```
-
-
-## 🧪 Ações / Botões no Sistema
-
-| **#** | **Nome**                     | **Função** |
-|-------|------------------------------|------------|
-| 01    | visualizar                   |            |
 
 

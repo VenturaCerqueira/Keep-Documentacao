@@ -114,7 +114,11 @@ function gerarItensSistema(sistemaSlug) {
               { label: '📏 20 - UFM', link: `sistemas/${sistemaSlug}/doc_org/cadastro/20-ufm` },
               { label: '🏢 21 - Setor', link: `sistemas/${sistemaSlug}/doc_org/cadastro/21-setor` },
               { label: '📜 22 - Órgão emissor', link: `sistemas/${sistemaSlug}/doc_org/cadastro/22-orgao_emissor` },
-              { label: '🏘️ 23 - Bairro', link: `sistemas/${sistemaSlug}/doc_org/cadastro/23-bairro` }
+              { label: '🏘️ 23 - Bairro', link: `sistemas/${sistemaSlug}/doc_org/cadastro/23-bairro` },
+              { label: '🗺 24 - Localizações', link: `sistemas/${sistemaSlug}/doc_org/cadastro/24-localizacoes` },
+              { label: '🧷 25 - Categoria', link: `sistemas/${sistemaSlug}/doc_org/cadastro/25-categoria` },
+              { label: '⚠ 26 - Modalidade', link: `sistemas/${sistemaSlug}/doc_org/cadastro/26-modalidade` }
+               
             ]
           },
           { label: '🏘️ Imobiliário', link: `sistemas/${sistemaSlug}/imobiliario` }
