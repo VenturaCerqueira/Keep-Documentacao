@@ -117,11 +117,44 @@ function gerarItensSistema(sistemaSlug) {
               { label: '🏘️ 23 - Bairro', link: `sistemas/${sistemaSlug}/doc_org/cadastro/23-bairro` },
               { label: '🗺 24 - Localizações', link: `sistemas/${sistemaSlug}/doc_org/cadastro/24-localizacoes` },
               { label: '🧷 25 - Categoria', link: `sistemas/${sistemaSlug}/doc_org/cadastro/25-categoria` },
-              { label: '⚠ 26 - Modalidade', link: `sistemas/${sistemaSlug}/doc_org/cadastro/26-modalidade` }
-               
+              { label: '⚠ 26 - Modalidade', link: `sistemas/${sistemaSlug}/doc_org/cadastro/26-modalidade` } 
             ]
           },
-          { label: '🏘️ Imobiliário', link: `sistemas/${sistemaSlug}/imobiliario` }
+          { label: '🏘️ Imobiliário',
+            collapsed: true,
+            items: [
+              { label: '🏠 01 - Imóvel', link: `sistemas/${sistemaSlug}/doc_org/imobiliario/01-imovel` },
+              { label: '🏢 02 - Proprietário', link: `sistemas/${sistemaSlug}/doc_org/imobiliario/02-proprietario` },
+              { label: '🏘️ 03 - Locatário', link: `sistemas/${sistemaSlug}/doc_org/imobiliario/03-locatario` },
+              { label: '📄 04 - Contrato', link: `sistemas/${sistemaSlug}/doc_org/imobiliario/04-contrato` }
+            ]
+          },
+          { label: '📄 Nota Fiscal Avulsa',
+            collapsed: true,
+            items: [
+              { label: '📄 01 - Nota Fiscal Avulsa', link: `sistemas/${sistemaSlug}/doc_org/nfa/01-nota_fiscal_avulsa` },
+              { label: '📑 02 - Tipo de Documento', link: `sistemas/${sistemaSlug}/doc_org/nfa/02-tipo_documento` },
+              { label: '📝 03 - Tipo de Procedimento', link: `sistemas/${sistemaSlug}/doc_org/nfa/03-tipo_procedimento` }
+            ]
+           },
+           { label: '👥 Contribuintes',
+            collapsed: true,
+            items: [
+              { label: '📄 01 - Contribuinte', link: `sistemas/${sistemaSlug}/doc_org/contribuintes/01-contribuinte` },
+              { label: '🏢 02 - Estabelecimento', link: `sistemas/${sistemaSlug}/doc_org/contribuintes/02-estabelecimento` },
+              { label: '📑 03 - Tipo de Documento', link: `sistemas/${sistemaSlug}/doc_org/contribuintes/03-tipo_documento` },
+              { label: '📝 04 - Tipo de Procedimento', link: `sistemas/${sistemaSlug}/doc_org/contribuintes/04-tipo_procedimento` }
+            ]
+           },
+           { label: '📊 Processamento',
+            collapsed: true,
+            items: [
+              { label: '📊 01 - Processamento', link: `sistemas/${sistemaSlug}/doc_org/processamento/01-processamento` },
+              { label: '📈 02 - Processamento de Lançamentos', link: `sistemas/${sistemaSlug}/doc_org/processamento/02-processamento_lancamentos` },
+              { label: '📅 03 - Processamento de Parcelas', link: `sistemas/${sistemaSlug}/doc_org/processamento/03-processamento_parcelas` },
+              { label: '📑 04 - Processamento de Documentos', link: `sistemas/${sistemaSlug}/doc_org/processamento/04-processamento_documentos` }
+            ]
+           }
         ]
       },
       { label: '📦  Deploy e Versionamento', link: `sistemas/${sistemaSlug}/deploy` },

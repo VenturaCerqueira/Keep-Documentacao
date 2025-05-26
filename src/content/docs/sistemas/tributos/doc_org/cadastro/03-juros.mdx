@@ -2,22 +2,66 @@
 title: Juros
 description: Página de documentação sobre Juros no sistema e-Contrib.
 ---
-# Juros
-##  Cadastro - Juros de Mora
-Cobrados em caso de atraso no pagamento de uma obrigação, como impostos, taxas ou dívidas. Geralmente, são juros compostos e têm como base a inadimplência no pagamento, acumulando-se até que o valor seja quitado.
-# 🎲 - Modelo de dados:
+import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
+
+## 🗂️ Descrição:
+
+<Aside type="tip" title="Cadastro de Juros">
+    ```
+    Cobrados em caso de atraso no pagamento de uma obrigação, como impostos,
+    taxas ou dívidas. Geralmente, são juros compostos e têm como
+    base a inadimplência no pagamento, acumulando-se
+    até que o valor seja quitado.
+    ```
+</Aside>
+---
+## 🔁 Rotas / Endpoints Relacionados:
+<br/>
+<Tabs>
+  <TabItem label="Lista de Juros" icon="setting">
+   ```sh title=" ✅- Lista de Juros"
+   http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/Juros
+   ```
+  </TabItem>
+  <TabItem label="Cadastrar Novo" icon="add-document">
+   ```sh title="✅- Cadastrar Nova Juros"
+   http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/Juros/editar/id
+   ```
+  </TabItem>
+  <TabItem label="Juros Editar" icon="pencil">
+   ```sh title="✅- Juros Editar"
+   http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/Juros/criar
+   ```
+  </TabItem>
+</Tabs>
+
+## 🧩 Estrutura Funcional dos Dados:
+
+<Card title="Tabelas sobre Juros: " type="tip" icon="seti:db">
  **\#**  |**Nome Físico**               |
 ---------|------------------------------|
 01       | juros                        |
+</Card>
 
-#
-#   ✅ - Tabelas relacionadas:
- **\#**  |**Nome Físico**               |   **Relação** |
+---
+
+### 🔗 Relacionamentos com Outras Tabelas:
+
+<Card title="Tabelas relacionadas com Juros: " type="tip" icon="seti:db">
+**\#**  |**Nome Físico**               |   **Relação** |
 ---------|------------------------------|---------------|      
 01       | [receita_tipo](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/07%20-%20receita_tipo.md)                 |     1 - n     |
+</Card>
 
-#
-# 🔢 - Campos
+---
+
+### 📊 Campos da Tabela:
+
+-  `juros`  
+
+
+<Card title="Campos de Juros:" type="tip" icon="seti:db">
+
  **\#**  | **Nome**                     | **Tabela Raiz**         | **Tipo/Tamanho**        | **Descrição**                                                                        | **Campo sistema**                      |
 ---------|------------------------------|-------------------------|-------------------------|--------------------------------------------------------------------------------------|----------------------------------------|
 01       | id                           |                         | bigint UN AI PK         |                                                                                      |                                        |
@@ -25,17 +69,44 @@ Cobrados em caso de atraso no pagamento de uma obrigação, como impostos, taxas
 03       | competencia*                 |                         | date                    | Período fiscal ao qual a multa se refere.                                            |  Competência                           |
 04       | percentual*                  |                         | decimal(15,2)           | Campo relacionado ao percentual da multa.                                            |  Percentual/mês                        |
 
-# Ações / botões:
- **\#**  |**Nome**                      |   **Função**  |
----------|------------------------------|---------------|
-1        | Editar                       |               |
-2        | excluir                      |               |
+</Card>
+---
 
-# Ações / botões:
- **\#**  |**Nome**                      |   **Função**  |
----------|------------------------------|---------------|
-1        | Editar                       |               |
-2        | excluir                      |               |
+## ⚠️ Regras de Negócio Específicas
+      <Steps>
+      1. Não é possível excluir um cadastro de um juros que esteja vinculado a outras operações ou em uso no sistema; 
+      </Steps>
 
-                                                                 
-  ↩️[Voltar página](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/02%20-%20multa.md) | ➡️[Proxima página](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/04%20-%20conta_contabil.md)|🔢[Voltar menu](https://github.com/VenturaCerqueira/Documento_gestao_tributaria)    
+
+## 🧪 Ações / Botões no Sistema:
+    <Steps>
+        1. **🔍 Pesquisar**: Filtro para pesquisa de todos as juros, pesquisando por "descrição".
+            
+        2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de visualizar cadastro da juros selecionada.
+                ```sh title=" 👁️‍🗨️Ação/visualizar"
+                http://www.e-contrib.com.br/gestaotributaria/
+                entidade/cadastros/juros/visualizar/1
+                ```
+        3. **✏️ Editar**: Possibilitando edição dos campos do cadastro de juros
+            ```sh title=" 👁️‍🗨️Ação/Editar"
+                http://www.e-contrib.com.br/gestaotributaria/
+                entidade/cadastros/juros/criar
+            ```
+        4. **🗑 Excluir:** Possibilitando excluir Juros cadastradas 
+        (⚠ Observação: apenas sera possivel excluir caso não possua nenhuma amarração com a juros)
+        
+   </Steps>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
