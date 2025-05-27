@@ -1,39 +1,115 @@
 ---
-title: Classificação Receita
+title: 📊 Classificação Receita
 description: Página de documentação sobre Classificação de Receitas no sistema e-Contrib.
 ---
-##  Cadastro - Classificação receita
-# 🎲 - Modelo de dados:
+import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
+
+## 🗂️ Descrição:
+
+<Aside type="tip" title="Lista de Índice Financeiro ">
+```
+
+```
+</Aside>
+
+## 🔁 Rotas / Endpoints Relacionados:
+
+<br/>
+
+<Tabs>
+  <TabItem label="Lista de Índices" icon="setting">
+   ```sh title=" ✅- Lista de Índices Financeiro"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/
+   cadastros/indices-financeiro
+   ```
+  </TabItem>
+  <TabItem label="Cadastrar Novo" icon="add-document">
+   ```sh title="✅- Cadastrar Novo Índice Financeiro"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/
+   cadastros/indices-financeiro/criar
+   ```
+  </TabItem>
+  <TabItem label="Índices Financeiro Editar" icon="pencil">
+   ```sh title="✅- Índices Financeiro Editar"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/cadastros/
+   indices-financeiro/editar/**Índice_selecionado**
+   ```
+  </TabItem>
+</Tabs>
+
+## 🧩 Estrutura Funcional dos Dados
+
+<Card title="Tabelas sobre : " type="tip" icon="seti:db">
  **\#**  |**Nome Físico**               |
 ---------|------------------------------|
 01       | receita_classificacao        |
+</Card>
 
-#
-#   ✅ - Tabelas relacionadas:
+---
+
+### 🔗 Relacionamentos com Outras Tabelas
+
+<Card title="Tabelas Relacionadas - receita_classificacao:" type="tip" icon="seti:db">
+
  **\#**  |**Nome Físico**               |   **Relação** |
 ---------|------------------------------|---------------|      
 01       | [conta_contabil](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/04%20-%20conta_contabil.md)               |     1 - N     |
 
-#   ✅ - Tabelas dependente:
+</Card>
+---
+<Card title="Tabelas Dependentes - receita_classificacao:" type="tip" icon="seti:db">
+
  **\#**  |**Nome Físico**               |   **Relação** |
 ---------|------------------------------|---------------| 
 01       | [indice_financeiro](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/01%20-%20indice_financeiro.md)           |     1 - 1     |
 02       | [juros](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/03%20-%20juros.md)                       |     1 - 1     |
 03       | [multa](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/02%20-%20multa.md)                        |     1 - 1     |
+</Card>
 
+---
 
-#
-# 🔢 - Campos
+### 📊 Campos da Tabela:
+
+    -  `receita_classificacao`
+
+<Card title="Campos de receita_classificacao" type="tip" icon="seti:db">
+
  **\#**  | **Nome**                     | **Tabela Raiz**         | **Tipo/Tamanho**        | **Descrição**                                                                        | **Campo sistema**                      |
 ---------|------------------------------|-------------------------|-------------------------|--------------------------------------------------------------------------------------|----------------------------------------|
 01       | id                           |                         | bigint UN AI PK         |                                                                                      |                                        |
-02       | fk_conta_contabil *          | [conta_contabil](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/04%20-%20conta_contabil.md)          | bigint(20)              | ç                                                                                     | Conta contábil                         |
+02       | fk_conta_contabil *          | [conta_contabil](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/04%20-%20conta_contabil.md)          | bigint(20)              |                                                                                      | Conta contábil                         |
 03       | descricao *                  |                         | varchar(100)            |                                                                                      | Descrição                              |
 04       | unidade *                    |                         | tinyint(3)              |                                                                                      | Unidade                                |
 05       | periodo *                    |                         | tinyint(4)              |                                                                                      | Periodicidade                          |
 06       | avulso *                     |                         | tinyint(3)              |                                                                                      | Avulso                                 |
 
-# Ações / botões:
- **\#**  |**Nome**                      |   **Função**  |
----------|------------------------------|---------------|
-1        | excluir                      |               |
+
+</Card>
+
+## ⚠️ Regras de Negócio Específicas
+      <Steps>
+
+      1. as
+      </Steps>
+
+
+## 🧪 Ações / Botões no Sistema
+<Steps>
+      1. **🔍 Pesquisar**: Filtro para pesquisa de todos os índices financeiros, pesquisando por "Nome".
+         
+      2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de novos índices financeiros.
+            ```sh title=" 👁️‍🗨️Ação/visualizar"
+            http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/
+            indices-financeiro/visualizar/id_indice
+            ```
+
+   </Steps>
+
+
+
+
+
+
+Colocar campo a campo e valor id de cada um 
+20 ao maximo padrão
+Dizer o que cada campo interfere no sistema [ Descrição dos campos]

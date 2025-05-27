@@ -2,31 +2,77 @@
 title: Receitas
 description: Página de documentação sobre Receitas no sistema e-Contrib.
 ---
-##  Cadastro - Receitas  
 
-# 🎲 - Modelo de dados:
+import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astrojs/starlight/components';
+
+## 🗂️ Descrição:
+
+<Aside type="tip" title="Lista de Receitas">
+```
+
+```
+</Aside>
+
+## 🔁 Rotas / Endpoints Relacionados:
+<br/>
+<Tabs>
+  <TabItem label="Lista de Receitas" icon="setting">
+   ```sh title=" ✅- Lista de Receitas"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/
+   cadastros/receitas
+   ```
+  </TabItem>
+  <TabItem label="Cadastrar Novo Receitas" icon="add-document">
+   ```sh title="✅- Cadastrar Novo Receitas"
+   http://www.e-contrib.com.br/gestaotributaria/**entidade**/
+   cadastros/receitas/criar
+   ```
+  </TabItem>
+  <TabItem label="Receitas Financeiro Editar" icon="pencil">
+   ```sh title="✅- Receitas Financeiro Editar"
+   http://www.e-contrib.com.br/gestaotributaria/entidade
+   /cadastros/receita/editar
+   ```
+  </TabItem>
+</Tabs>
+
+## 🧩 Estrutura Funcional dos Dados
+<Card title="Tabelas Receita: " type="tip" icon="seti:db">
  **\#**  |**Nome Fisico**               |
 ---------|------------------------------|
 01       |  receita                     |
-#
-#   ✅ - Tabelas relacionadas:
+</Card>
+
+---
+### 🔗 Relacionamentos com Outras Tabelas
+<Card title="Tabelas Relacionadas - Receita:" type="tip" icon="seti:db">
  **\#**  |**Nome Fisico**               |   **Relação** |
 ---------|------------------------------|---------------|      
 01       | [receita_classificacao](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/06%20-%20classificacao_receita.md)        |     1 - 1     |
 
-#   ✅ - Tabelas dependente:
+</Card>
+
+---
+
+### 🔁 Tabela dependentes:
+<Card title="Tabelas que receita é dependente: " type="tip" icon="seti:db">
  **\#**  |**Nome Fisico**               |   **Relação** |
 ---------|------------------------------|---------------| 
 01       | [receita_valor]()                |     1 - N     |
 02       | [contribuinte_receita]()         |     1 - N     |
 03       | [lancamento]()                   |     1 - N     |
+</Card>
 
-#
-# 🔢 - Campos
+---
+
+### 📊 Campos da Tabela:
+
+-  `receita`  
+<Card title="Campos de receita:" type="tip" icon="seti:db">
  **\#**  | **Nome**                     | **Tabela Raiz**         | **Tipo/Tamanho**        | **Descrição**                                                                        | **Campo sistema**                      |
 ---------|------------------------------|-------------------------|-------------------------|--------------------------------------------------------------------------------------|----------------------------------------|
 01       | id                           |                         | bigint UN AI PK         |                                                                                      |                                        |
-02       | fk_receita_classificacao     | receita_classificacao   | bigint(20)              |   ç                                                                                   | Classificação de receita               |
+02       | fk_receita_classificacao     | receita_classificacao   | bigint(20)              |                                                                                      | Classificação de receita               |
 03       | codigo                       |                         | int(11)                 |                                                                                      | Código                                 |
 04       | descricao                    |                         | varchar(255)            | Detalha a natureza ou origem da receita, como impostos, taxas, contribuições, etc.   | Descrição                              |
 05       | valor                        |                         | decimal(15,2)           | Valor que representa a receita.                                                      | Valor                                  |
@@ -41,7 +87,30 @@ description: Página de documentação sobre Receitas no sistema e-Contrib.
 14       | cod_conta_reconhecimento     |                         | varchar(40)             |                                                                                      | Código evento receita                  |
 15       | cod_conta_pagamento          |                         | varchar(40)             |                                                                                      |                                        |        
 
-# Ações / botões:
- **\#**  |**Nome**                      |   **Função**  |
----------|------------------------------|---------------|
-1        | Editar                       |               |
+</Card>
+
+---
+
+## ⚠️ Regras de Negócio Específicas
+      <Steps>
+
+      1. Cadastro apenas 1 até 10 bloqueado internamente
+      </Steps>
+
+
+## 🧪 Ações / Botões no Sistema
+    <Steps>
+      1. **🔍 Pesquisar**: Filtro para pesquisa de todos os índices financeiros, pesquisando por "Nome".
+         
+      2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de novos índices financeiros.
+            ```sh title=" 👁️‍🗨️Ação/visualizar"
+            http://www.e-contrib.com.br/gestaotributaria/entidade/cadastros/
+            indices-financeiro/visualizar/id_indice
+            ```
+   </Steps>
+
+
+
+
+
+

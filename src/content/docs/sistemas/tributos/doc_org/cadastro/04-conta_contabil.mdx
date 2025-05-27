@@ -76,14 +76,21 @@ import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astr
 -  `conta_contabil`  
 <Card title="Campos de Conta Contábil:" type="tip" icon="seti:db">
 
-**\#**  | **Nome**                     | **Tabela Raiz**         | **Tipo/Tamanho**        | **Descrição**                                                                        | **Campo sistema**                      |
+**\#**   | **Nome**                     | **Tabela Raiz**         | **Tipo/Tamanho**        | **Descrição**                                                                        | **Campo sistema**                      |
 ---------|------------------------------|-------------------------|-------------------------|--------------------------------------------------------------------------------------|----------------------------------------|
 01       | id                           |                         | bigint UN AI PK         |                                                                                      |                                        |
-02       | fK_receita_tipo*             | [receita_tipo](https://github.com/VenturaCerqueira/Documento_gestao_tributaria/blob/main/Cadastro/07%20-%20receita_tipo.md)            | bigint(20)              | Código *"id"* da tabela *tipo_receita*.                                              | Tipo de receita                        |
+02       | fK_receita_tipo*             | [receita_tipo]          | bigint(20)              | Código *"id"* da tabela *tipo_receita*.                                              | Tipo de receita                        |
 03       | codigo*                      |                         | varchar(50)             | Código da conta contábil.                                                            | Código                                 |
 04       | descricao*                   |                         | varchar(200)            | Detalhamento da conta contábil, com descrição da natureza.                           | Descrição                              |
 05       | sigla*                       |                         | varchar(10)             | Sigla do tributo, **exemplos:** IPTU, TFF e outras abreviações.                      | Sigla                                  |
-
+06       | cod_conta_principal          |                         | varchar(40)             | Código principal                                                                     | Código principal                       |
+07       | cod_conta_encargos           |                         | varchar(40)             | Juros/Multa                                                                          | Juros/Multa                            |
+08       | cod_conta_da                 |                         | varchar(40)             | Dívida ativa                                                                         | Dívida ativa                           |   
+09       | cod_conta_da_encargos        |                         | varchar(40)             | Juros/Multa (D.A.)                                                                   | Juros/Multa (D.A.)                     |            
+10       | num_fonte_recurso            |                         | varchar(40)             | Nº fonte                                                                             | Nº fonte                               |            
+11       | cod_orgao                    |                         | varchar(40)             | Código Órgão                                                                         | Código Órgão                           |        
+12       | cod_conta_reconhecimento     |                         | varchar(40)             | Código evento receita                                                                | Código evento receita                  |
+13       | cod_conta_pagamento          |                         | varchar(40)             |                                                                                      |                                        |
 </Card>
 
 ---
@@ -91,7 +98,7 @@ import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astr
 ## ⚠️ Regras de Negócio Específicas
 <Card>
       <Steps>
-      1. Conta contábil possui base cadastrada de 1 até 23 registros, não podendo alterar ou excluir os registros, padrão " ";
+      1. Conta contábil possui base cadastrada de 1 até 30 registros, não podendo alterar ou excluir os registros, padrão "PCASP";
       </Steps>
 | Nº | Código               | Sigla        | Descrição                                                                                      | Tipo                      |
 |----|----------------------|--------------|-----------------------------------------------------------------------------------------------|----------------------------|
@@ -118,31 +125,30 @@ import { Aside, Badge, Card, Code, Tabs, TabItem, LinkButton, Steps} from '@astr
 | 21 | 1.3.1.1.99.0.0       | RP OUTRAS    | Outras Receitas Imobiliárias                                                                  | NÃO TRIBUTÁRIA             |
 | 22 | 1.9.1.1.07.0.0       | MULTA/TCM    | Multas Aplicadas pelos Tribunais de Contas                                                    | NÃO TRIBUTÁRIA             |
 | 23 | 1.9.2.3.99.0.0       | RESSAR/TCM   | Outros Ressarcimentos                                                                         | NÃO TRIBUTÁRIA             |
-
-      2. Não é possível excluir um cadastro de multa que esteja vinculado a outras operações ou em uso no sistema;    
+    <Steps>
+      2. Caso "COD_SISTEMA_SIAFIC"([Gerenciamento - Parâmetros]) encontr-se vazio(Null) não sera possivel cadstrar os campos de Contabilização: Código principal, Juros/Multa, Dívida ativa e  Juros/Multa  
+      3. Não é possível excluir um cadastro de multa que esteja vinculado a outras operações ou em uso no sistema;
+      4. Código evento receita: Condigo reconhecimento receita - reconhecimento das receitas da conta contabil; 
+      5. Nº fonte e Código Órgão puxam automaticamente após cadastro dos código da Contabilização;
+    </Steps>   
 </Card>
-
-
-
-
 
 ## 🧪 Ações / Botões no Sistema:
     <Steps>
-        1. **🔍 Pesquisar**: Filtro para pesquisa de todos as multas, pesquisando por "descrição".
+        1. **🔍 Pesquisar**: Filtro para pesquisa de todos as Conta contábeis, pesquisando por "descrição".
             
         2. **👁️‍🗨️ Ações/visualizar**: Acesso para cadastro de visualizar cadastro da multa selecionada.
                 ```sh title=" 👁️‍🗨️Ação/visualizar"
                 http://www.e-contrib.com.br/gestaotributaria/
-                entidade/cadastros/multas/visualizar/1
+                entidade/cadastros/contas-contabeis/visualizar/1 
                 ```
-        3. **✏️ Editar**: Possibilitando edição dos campos do cadastro de multas
+        3. **✏️ Editar**: Possibilitando edição dos campos do cadastro de Conta contábeis
             ```sh title=" 👁️‍🗨️Ação/visualizar"
                 http://www.e-contrib.com.br/gestaotributaria/
-                entidade/cadastros/multas/criar
+                entidade/cadastros/contas-contabeis/criar
             ```
-        4. **🗑 Excluir:** Possibilitando excluir multas cadastradas 
-        (⚠ Observação: apenas sera possivel excluir caso não possua nenhuma amarração com a multa)
-        
+        4. **🗑 Excluir:** Possibilitando excluir Conta contábeis cadastradas 
+        (⚠ Observação: apenas sera possivel excluir caso não possua nenhuma amarração com a Conta contábeis). 
    </Steps>
 
 
